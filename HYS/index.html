@@ -8,15 +8,26 @@
   <link href='https://fonts.googleapis.com/css2?family=Lobster&display=swap' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>💖🎁Trophy GF HYS🎁💖</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
   </head>
   <body>
     
     <canvas id="bg"></canvas>
 
     <main>
-      
+      <div id="cover"> 
+        <canvas id="cover3d"></canvas>
+        <div class="cardcontainer1" id="introEyes" >
+        <div class="card">
+          <h1>Scroll to Read Story</h1>
+        </div>
+      </div>
+      <div id="backToDance">See me dance again</div>
+    </div>
+
       <div class="background" id="Valentine">
         <div id="contenthead" class="puff-in-center">
           <h1>Happy Valentine's Day!</h1>
@@ -24,8 +35,6 @@
         <p>I have 2 left feet so I dance for you here.</p>
         </div>
 
-        
-        
         <canvas id="hysintro"></canvas>
         <div id="flexdivintro">
           
@@ -60,21 +69,36 @@
         <!-- <button class="custom-btn btn-12"><span>Lets Go!</span><span>Story Time!</span></button> -->
         <div  id="goToStory">Go To Story</div>
      </div>
-     <div class="cardcontainer" id="introEyes" >
+    <div class="vwdiv">
+      <h1 class="headerstyle">The Eyes That Capture My Heart</h1>
+     <div class="cardcontainer">
       <div class="card">
-        <h1>Scroll to Read Story</h1>
-      </div>
-    </div>
-     <div class="cardcontainer"  >
-      <div class="card">
-        <h1>The Eyes That Capture My Heart</h1>
+       
         <p>17th NOV 2022. An Empty Restaurant, sun shine glitter throught the glass with the view of 
           a pool that's under construction. Without Electricity and humid environment, it wasn't the 
           romantic setting anyone's thought to be.
         </p>
       </div>
     </div>
+    </div>
+    
+    <div class="vwdiv">
+      <div class="area" >
+        <div class="circles">
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+        </div>
+  </div >
 
+  
     <div class="cardcontainer" id="Opadiv0">
       <div class="card" >
         <p>Everything changed when she arrived. The eyes! So beautiful, So Captivating.....
@@ -83,7 +107,11 @@
       </div>
 
     </div>
+    
+  </div>
 
+  <div class="vwdiv">
+  
     <div class="cardcontainer" id="Opadiv1">
       <div class="card" >
         <p>Just Like old friends seeing each other after a long time, we talked, we laughed, we shared,
@@ -91,7 +119,9 @@
         </p>
       </div>
     </div>
+  </div>
 
+  <div class="vwdiv">
     <div class="cardcontainer" id="Opadiv2">
       <div class="card">
         <h1>The Cloudy Kiss</h1>
@@ -100,7 +130,9 @@
         </p>
       </div>
     </div>
+  </div>
 
+  <div class="vwdiv">
     <div class="cardcontainer">
       <div class="card">
         <p>
@@ -109,7 +141,13 @@
         </p>
       </div>
     </div>
+  </div>
 
+    <div class="vwdiv" id="kissbg">
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
     <div class="cardcontainer">
       <div class="card">
         <p>
@@ -117,15 +155,19 @@
         </p>
       </div>
     </div>
+  </div>
 
-    <div class="cardcontainer">
+    <div class="vwdiv">
+    <div class="cardcontainer" id="Heartanimation">
       <div class="card">
         <p>
           And Kids. That's how I fall in Love with her.
         </p>
       </div>
     </div>
+  </div>
 
+    <div class="vwdiv">
     <div class="cardcontainer">
       <div class="card">
         <h1>10 Reasons Why She is Perfect For me</h1>
@@ -143,24 +185,37 @@
         </ul>
       </div>
     </div>
+  </div>
 
+    <div class="vwdiv">
     <div class="cardcontainer">
-      <div class="card">
-        <h1>What she is to me currently</h1>
-        <ul>
-          <li>My Lucky charm</li>
-          <li>Help me relieve my stress</li>
-          <li>Makes me happy when she sing while she's happy</li>
-          <li>My Good Morning</li>
-          <li>My Good Night</li>
-          <li>My Food Partner</li>
-          <li>My Movie Partner</li>
-          <li>Raining</li>
-          <li>Many More To Come.....</li>
-        </ul>
+      <div class="cardsheismy">
+
+        
+        <h1>She is 
+          <div class="scroller">
+            <span>
+              My Lucky charm<br/>
+              My Stress Reliever<br/>
+              the one who Makes me happy when she sing while she's happy<br/>
+              My Good Morning<br/>
+              My Good Night<br/>
+              My Food Partner<br/>
+              My Movie Partner<br/>
+              My Happiness<br/>
+              Raining<br/>
+              Everything.....<br/>
+            </span>
+          </div>
+
+        </h1>
+        
       </div>
     </div>
+  </div>
 
+
+    <div class="vwdiv">
     <div class="cardcontainer">
       
       <div class="card">
@@ -168,6 +223,7 @@
         <p>Hidden From Public</p>
       </div>
     </div>
+  </div>
 
     <!-- <div class="cardcontainer"></div> -->
     

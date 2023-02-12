@@ -16,8 +16,9 @@ camera1.position.set(
   3, 
   4);
 const pointLight1 = new THREE.PointLight(0xffffff);
-pointLight1.position.set(0,1,2);
+pointLight1.position.set(0,0.5,0.5)
 const ambientLight1 = new THREE.AmbientLight(0xffffff);
+ambientLight1.intensity = 1;
 const controls1 = new OrbitControls(camera1, renderer1.domElement);
 controls1.target.set( 
   0.012487779108576954,
@@ -30,20 +31,30 @@ controls1.minPolarAngle = Math.PI / 4;
 controls1.maxPolarAngle = Math.PI / 2;
 controls1.minDistance = 3;
 controls1.maxDistance = 4;
-const lightHelper = new THREE.PointLightHelper(pointLight1);
+
   const gridHelper = new THREE.GridHelper(200,50);
 
 const scene1BG = new THREE.TextureLoader().load('pink1.jpg');
 scene1.background=scene1BG;
     
-scene1.add(pointLight1, ambientLight1, 
+scene1.add(pointLight1, 
+  ambientLight1, 
   // lightHelper,
   // gridHelper
   );
   
 const RouteStoryline = document.getElementById('goToStory');
+const backToDance = document.getElementById('backToDance');
+
 const Valentine = document.getElementById('Valentine');
 const IntroEyes = document.getElementById('introEyes');
+backToDance.addEventListener('click',()=>{
+  Valentine.style.opacity="1";
+  Valentine.style.display="block";
+  Valentine.style.animation='none';
+
+})
+
 RouteStoryline.addEventListener('click',()=>{
   Valentine.style.animation='fade-out-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both';
   
@@ -56,8 +67,18 @@ RouteStoryline.addEventListener('click',()=>{
 })
 
 
+
 //Storyline
 const scene = new THREE.Scene();
+
+const materialpurple = new THREE.MeshStandardMaterial({
+  envMap: reflectionCubepurple,
+  roughness: 1,
+  metalness: 1,
+  emissive: new THREE.Color(0xff08ea),
+  emissiveIntensity: 10,
+  color: 0xffffff
+})
 
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -67,6 +88,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 let mixer;
+let mixer1;
 const loadingManager = new THREE.LoadingManager();
 
 const progressBar = document.getElementById('progress-bar');
@@ -85,18 +107,13 @@ loader.load(
         const Model = gltf.scene;
         scene1.add(Model);
         mixer = new THREE.AnimationMixer(Model);
-        console.log(gltf.animations[3])
-        // gltf.animations.forEach( function ( animation ) {
-        //   mixer.clipAction( animation ).play();
-        // } );
-        // mixer.clipAction(glif.animations).stop();
         const SalsaAction = mixer.clipAction(gltf.animations[2]);
         const MacarenaAction = mixer.clipAction(gltf.animations[1]);
         const TwerkAction = mixer.clipAction(gltf.animations[3]);
         const IdleAction = mixer.clipAction(gltf.animations[0]);
         IdleAction.play();
         
-        console.log(gltf.animations);
+        // console.log(gltf.animations);
         
         
   const Macarena=document.getElementById('macarena');
@@ -145,21 +162,139 @@ loader.load(
         console.error( 'An error happened', error );
     },
 )
-
+let light2 = new THREE.PointLight('0xffffff', 3, 50);
+const lightHelper2 = new THREE.PointLightHelper(light2);
+light2.position.set(-0.8,1.1,1.3);
+// scene.add(light2);
 loader.load(
   'YAMAKA.glb', (gltf)=>{
     const Model = gltf.scene;
         scene.add(Model);
+       
         Model.rotateY(-90);
         Model.position.set(
-          0,-0.2,5
+          0,-0.5,-0.5
         )
         Model.scale.set(0.1, 0.1, 0.1);
   }
 )
+loader.load(
+  'sheArrives.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        Model.rotateY(-90);
+        Model.position.set(
+          0,-0.2,16.5
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.6);
+  }
+)
+loader.load(
+  'BBistro.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        Model.rotateY(-90);
+        Model.position.set(
+          0.3,0.1,32
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.4);
+  }
+)
+loader.load(
+  'balcony.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        Model.rotateY(-90);
+        Model.position.set(
+          0.5,0.1,48
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.1);
+  }
+)
+loader.load(
+  'reserved.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        Model.rotateY(-90);
+        Model.position.set(
+          1,0.3,64
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.2);
+  }
+)
+loader.load(
+  'kiss.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        Model.rotateY(-90);
+        Model.position.set(
+          1,0.3,80
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.2);
+  }
+)
+let light1 = new THREE.PointLight('white', 1, 50);
+const lightHelper = new THREE.PointLightHelper(light1);
+light1.position.set(1,2,98);
+
+var textureLoader = new THREE.CubeTextureLoader();
+textureLoader.setPath( 'textures/' );
+
+var reflectionCube = textureLoader.load([
+  '1.png', '2.png',
+  '3.png', '4.png',
+  '5.png', '6.png'
+]);
+var reflectionCubepurple = textureLoader.load([
+  'purple.png', 'purple1.png',
+  'purple3.png', 'purple4.png',
+  'purple5.png', 'purple2.png'
+]);
 
 
+const material1 = new THREE.MeshStandardMaterial({
+  envMap: reflectionCube,
+  roughness: 0.7,
+  metalness: 1,
+  // emissive: new THREE.Color(0xff08ea),
+  // emissiveIntensity: 1,
+  color: 0xff08ea
+});
 
+loader.load(
+  'heart.glb', (gltf) => {
+    const Model1 = gltf.scene;
+    scene.add(Model1);
+    Model1.traverse( function ( node ) {
+      if ( node.isMesh ) node.material = material1;
+    });
+
+    Model1.rotateY(-80);
+    Model1.position.set(1, 0, 96);
+    Model1.scale.set(1, 1, 1);
+
+    
+    light1.target = Model1;
+    console.log(gltf.animations);
+
+    const Heartanimation = document.getElementById('Heartanimation');
+    Heartanimation.addEventListener('click', () => {
+      console.log('Button clicked');
+      mixer1 = new THREE.AnimationMixer(gltf.scene);
+      
+      gltf.animations.forEach(clip => {
+        var action = mixer1.clipAction(clip);
+        action.setDuration(gltf.animations[2].duration * 0.01);
+        action.play();
+      });
+    });
+  }
+);
 renderer.setPixelRatio( window.devicePixelRatio);
 renderer.setSize( window.innerWidth, window.innerHeight);
 // camera.position.setZ(30);
@@ -183,7 +318,7 @@ const controls = new OrbitControls(camera, renderer.domElement)
 function addStar(){
   const geometry = new THREE.SphereGeometry(0.25, 24,24);
   const material = new THREE.MeshStandardMaterial( {color:0xff1a7e});
-  const star = new THREE.Mesh(geometry, material);
+  const star = new THREE.Mesh(geometry, materialpurple);
 
   const [x,y,z] = Array(3).fill().map(()=>
     THREE.MathUtils.randFloatSpread(100)
@@ -195,8 +330,8 @@ function addStar(){
 
 Array(200).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load('pink.jpg');
-scene.background = spaceTexture;
+const spaceTexture = new THREE.TextureLoader().load('purple.png');
+scene.background=spaceTexture;
 
 const Hysbg = new THREE.TextureLoader().load('Fotor_AI2.png');
 
@@ -205,22 +340,34 @@ const hys = new THREE.Mesh(
   new THREE.MeshBasicMaterial({ map: Hysbg})
 );
 hys.position.set(3,3,3)
-// scene.add(hys);
+scene.add(hys);
 
-scene.add(pointLight, ambientLight, 
+scene.add(pointLight, 
+  ambientLight, 
+  light1, 
   // lightHelper, 
-  gridHelper
+  // gridHelper
   );
   // scene1.add(pointLight1, ambientLight1,gridHelper);
 
+  const cover=document.getElementById('cover');
 
 function moveCamera(){
   // const maintag=document.getElementsByTagName('main');
   const t = document.body.getBoundingClientRect().top;
-  console.log(t)
-  // hys.rotation.x += 0.05;
-  // hys.rotation.y += 0.075;
-  // hys.rotation.z += 0.05;
+  // console.log(t)
+  hys.rotation.x += 0.05;
+  hys.rotation.y += 0.075;
+  hys.rotation.z += 0.05;
+    if(t>-100){
+      cover.style.opacity='100%';
+      cover.style.display='block';
+ 
+    }else if(t<-100){
+      cover.style.opacity='0';
+      cover.style.display='none';
+    }
+
 
     camera.position.set(0,0,0);
     camera.position.z = t * -0.01;
@@ -240,7 +387,7 @@ function moveCamera(){
         }
       }
       
-      checker(position0, Opadiv0);
+      // checker(position0, Opadiv0);
 
 
 }
@@ -272,9 +419,12 @@ function animate() {
   controls.update();
   renderer1.render(scene1, camera1 );
   renderer.render(scene,camera);
+  // renderer2.render(scene2, camera2);
   // console.log(camera1.position);
   // console.log(controls1.target);
   if ( mixer ) mixer.update( clock.getDelta() );
+  if ( mixer1 ) mixer1.update( clock.getDelta() );
+
 }
 
 animate();
