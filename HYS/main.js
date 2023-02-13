@@ -178,7 +178,7 @@ loader.load(
         if (window.innerHeight < 720) {
           // set model position for mobile
           Model.position.set(0,-0.5,-0.5);
-        } else if(window.innerHeight < 1440) {
+        } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0,-0.5,-0.5);
         }else{
@@ -196,7 +196,7 @@ loader.load(
         if (window.innerHeight < 720) {
           // set model position for mobile
           Model.position.set(0,0,4);
-        } else if(window.innerHeight < 1440) {
+        } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0,-0.5,8);
         }else{
@@ -215,16 +215,16 @@ loader.load(
         if (window.innerHeight < 720) {
           // set model position for mobile
           Model.position.set(0,0,8);
-        } else if(window.innerHeight < 1440) {
+        } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0.3,-0.1,16);
         }else{
           Model.position.set(0.3,-0.1,32);
 
         } 
-        Model.position.set(
-          0.3,0.1,16
-        )
+        // Model.position.set(
+        //   0.3,0.1,16
+        // )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.4);
   }
@@ -237,9 +237,18 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         // Model.rotateY(-90);
-        Model.position.set(
-          -1,0.1,24
-        )
+        if (window.innerHeight < 720) {
+          // set model position for mobile
+          Model.position.set(-1,0.1,12);
+        } else if(window.innerHeight < 1200) {
+          // set model position for desktop
+          Model.position.set(-1,0.1,24);
+        }else{
+          Model.position.set(-1,0.1,48);
+        } 
+        // Model.position.set(
+        //   -1,0.1,24
+        // )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.4);
   }
@@ -249,9 +258,19 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        Model.position.set(
-          0.5,0.1,32
-        )
+        if (window.innerHeight < 720) {
+          // set model position for mobile
+          Model.position.set(0.5,0.1,12);
+        } else if(window.innerHeight < 1200) {
+          // set model position for desktop
+          Model.position.set(0.5,0.1,24);
+        }else{
+          Model.position.set(0.5,0.1,48);
+
+        } 
+        // Model.position.set(
+        //   0.5,0.1,32
+        // )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.1);
   }
@@ -261,9 +280,19 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        Model.position.set(
-          2,0.3,40
-        )
+        if (window.innerHeight < 720) {
+          // set model position for mobile
+          Model.position.set(2,0.3,17);
+        } else if(window.innerHeight < 1200) {
+          // set model position for desktop
+          Model.position.set(2,0.3,33);
+        }else{
+          Model.position.set(2,0.3,66);
+
+        } 
+        // Model.position.set(
+        //   2,0.3,40
+        // )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.2);
   }
@@ -273,9 +302,18 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        Model.position.set(
-          1,0.3,48
-        )
+        if (window.innerHeight < 720) {
+          // set model position for mobile
+          Model.position.set(1,0.3,16);
+        } else if(window.innerHeight < 1200) {
+          // set model position for desktop
+          Model.position.set(1,0.3,32);
+        }else{
+          Model.position.set(1,0.3,64);
+        } 
+        // Model.position.set(
+        //   1,0.3,48
+        // )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.2);
   }
@@ -285,9 +323,19 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        Model.position.set(
-          1,0.3,80
-        )
+        if (window.innerHeight < 720) {
+          // set model position for mobile
+          Model.position.set(1,0.3,80);
+        } else if(window.innerHeight < 1200) {
+          // set model position for desktop
+          Model.position.set(1,0.3,80);
+        }else{
+          Model.position.set(1,0.3,80);
+
+        } 
+        // Model.position.set(
+        //   1,0.3,80
+        // )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.2);
   }
