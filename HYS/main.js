@@ -185,7 +185,7 @@ loader.load(
         scene.add(Model);
         Model.rotateY(-90);
         Model.position.set(
-          0,-0.2,16.5
+          0,-0.2,8
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.6);
@@ -197,7 +197,7 @@ loader.load(
         scene.add(Model);
         Model.rotateY(-90);
         Model.position.set(
-          0.3,0.1,32
+          0.3,0.1,16
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.4);
@@ -212,7 +212,7 @@ loader.load(
         scene.add(Model);
         // Model.rotateY(-90);
         Model.position.set(
-          -1,0.1,34
+          -1,0.1,24
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.4);
@@ -224,7 +224,7 @@ loader.load(
         scene.add(Model);
         Model.rotateY(-90);
         Model.position.set(
-          0.5,0.1,48
+          0.5,0.1,32
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.1);
@@ -236,7 +236,7 @@ loader.load(
         scene.add(Model);
         Model.rotateY(-90);
         Model.position.set(
-          2,0.3,52
+          2,0.3,40
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.2);
@@ -248,7 +248,7 @@ loader.load(
         scene.add(Model);
         Model.rotateY(-90);
         Model.position.set(
-          1,0.3,64
+          1,0.3,48
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.2);
@@ -523,7 +523,6 @@ function animate() {
   // torus.rotation.x += 0.01;
   // torus.rotation.y += 0.005;
   // torus.rotation.z += 0.01;
-
   controls.update();
   renderer1.render(scene1, camera1 );
   renderer.render(scene,camera);

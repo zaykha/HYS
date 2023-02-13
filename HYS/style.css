@@ -113,7 +113,7 @@ backdrop-filter: blur( 4px );
 -webkit-backdrop-filter: blur( 4px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
-font-size: 1.3rem;
+font-size: 0.9rem;
 /* z-index: 3; */
 }
 .cardcontainer1{
@@ -270,26 +270,26 @@ a{
   padding: 0 10px;
 }
 #contenthead{
-  font-family: 'Dancing Script', cursive, sans-serif;
+  /* font-family: 'Dancing Script', cursive, sans-serif; */
   position:relative;
   top:3%;
   margin:auto;
   /* height: 200px; */
-  background: white;
-  /* background: linear-gradient(to right, #FFFFFF 34%, #ff08ea 100%);
+  /* background: white; */
+  background: linear-gradient(to right, #FFFFFF 34%, #ff08ea 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
   display:flex;
   color: white;
   gap: 0px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 100;
   /* cursor: url('/HYS/cursorhys1.png'), auto; */
   user-select: none;
-  background-color: #671e4169;
+  /* background-color: #671e4169; */
 }
 #introEyes{
   position: relative;
@@ -339,8 +339,8 @@ a{
 }
 .headerstyle{
   position: relative;
-  /* top:10vh; */
-  font-size: 5rem;
+  top:0;
+  font-size: 1.2rem;
   color: rgb(255, 1, 149);
   /* background: linear-gradient(to right, #ff6ab0 34%, #ff08ea 100%);
   -webkit-background-clip: text;
@@ -707,10 +707,11 @@ a{
 
 #flexdivintro{
   width:400px;
-  margin: 80px auto;
-  position:absolute;
-  bottom:20%;
-  left:43%;
+  margin: 80px auto 10px;
+  position:relative;
+  top: 40%;
+  /* left: 50%;
+  transform: translate(-50%,-50%); */
 
   display: flex;
   justify-content: center;
@@ -718,12 +719,30 @@ a{
   gap: 30px;
   
 }
-#backToDance,
+#backToDance{
+  width: 400px;
+  margin: 0px auto;
+  position:relative;
+  top: 40%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  
+  
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(170, 6, 211);
+  color:white;
+  z-index: 3;
+  transition: 0.2s ease-in;
+  border: 1px solid rgba(151, 151, 151, 0.856);
+  cursor: pointer;
+}
 #goToStory{
   width: 400px;
-  position:absolute;
-  bottom:20%;
-  left:43%;
+  margin: 0px auto;
+  position:relative;
+  top: 40%;
   display: flex;
   align-items:center;
   justify-content:center;
@@ -1284,5 +1303,10 @@ footer{
   }
   50% {
     transform: translate3d(0,5px,0);
+  }
+}
+@media screen and (max-width:1440px) {
+  #contenthead{
+    font-size: 0.9rem;
   }
 }
