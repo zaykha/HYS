@@ -179,7 +179,7 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
           Model.position.set(0,-0.5,-0.5);
         } else if(window.innerHeight < 1200) {
@@ -197,9 +197,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(0,0,4);
+          Model.position.set(0,-0.5,7);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0,-0.5,6.5);
@@ -216,9 +216,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(0,0,8);
+          Model.position.set(0,0,15.7);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0.3,-0.1,14.9);
@@ -241,9 +241,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         // Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(-1,0.1,12);
+          Model.position.set(-1,0.1,24.5);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(-1,0.1,24);
@@ -262,9 +262,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(0.5,0.1,12);
+          Model.position.set(0.5,0.1,23.5);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0.5,0.1,22.5);
@@ -284,9 +284,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(2,0.3,17);
+          Model.position.set(2,0.3,25);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(2,0.3,33);
@@ -306,9 +306,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(0,0,16);
+          Model.position.set(0,0,32);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0,0,30.2);
@@ -327,9 +327,9 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 720) {
+        if (window.innerHeight < 920) {
           // set model position for mobile
-          Model.position.set(0,0,12);
+          Model.position.set(0.3,0,41);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(-0.2,0,37);
@@ -341,14 +341,14 @@ loader.load(
         //   1,0.3,80
         // )
         Model.scale.set(0.1, 0.1, 0.1);
-        Model.rotateY(0.7);
+        Model.rotateY(0.5);
   }
 )
 let light1 = new THREE.PointLight('white', 1, 50);
 const lightHelper = new THREE.PointLightHelper(light1);
-if (window.innerHeight < 720) {
+if (window.innerHeight < 920) {
   // set model position for mobile
- light1.position.set(0,0,12);
+ light1.position.set(0,0,44.7);
 } else if(window.innerHeight < 1200) {
   // set model position for desktop
  light1.position.set(0.2, 0.7, 43.7);
@@ -391,9 +391,9 @@ loader.load(
     });
 
     Model1.rotateY(-80);
-    if (window.innerHeight < 720) {
+    if (window.innerHeight < 920) {
       // set model position for mobile
-      Model1.position.set(0,0,12);
+      Model1.position.set(0,0,44);
     } else if(window.innerHeight < 1200) {
       // set model position for desktop
       Model1.position.set(0.2, 0, 43);

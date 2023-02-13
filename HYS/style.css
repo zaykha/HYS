@@ -47,6 +47,7 @@ li{
 }
 #cover{
   position:fixed;
+  box-sizing: border-box;
   top:0;
   left:0;
   width:100vw;
@@ -62,6 +63,7 @@ li{
 .vwdiv{
   width: 100vw;
   height:100vh;
+  box-sizing: border-box;
   /* background-color: #64005f6b; */
   display: flex;
   flex-direction: column;
@@ -69,6 +71,7 @@ li{
   align-items: center;
   position: relative;
   top: 100px;
+  /* overflow-y: hidden; */
 /* z-index: 3; */
 
 }
@@ -90,7 +93,7 @@ background-size: cover;
 .card{
   position: relative;
   
-  max-width: 600px;
+  /* max-width: 600px; */
   text-align: center;
   /* background-color: white; */
   /* padding: 40px; */
@@ -152,6 +155,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   border-radius: 10px;
   color: black;
   background-color: rgba(252, 252, 252, 0.527);
+  text-align: center;
 }
 #letterMZK{
   width: 100vw;
@@ -331,6 +335,7 @@ a{
 }
 .area{
   position:absolute;
+  box-sizing: border-box;
   /* background: #cc020221;   */
   background: linear-gradient(to bottom, #ffffff00, #e2060665, #ffffff00);  
   width: 100vw;
@@ -339,10 +344,11 @@ a{
  
 }
 .headerstyle{
-  width: 100vw;
+  /* width: 100vw; */
   box-sizing: border-box;
-  position: relative;
-  top:0;
+  position: absolute;
+  margin:auto;
+  top:100px;
   font-size: 1.2rem;
   color: rgb(255, 1, 149);
   /* background: linear-gradient(to right, #ff6ab0 34%, #ff08ea 100%);
@@ -393,7 +399,7 @@ a{
   /* text-align: center; */
   border-radius: 1.5em;
   /* min-width: 400px; */
-  width: 100vw;
+  width: 80vw;
   /* width: 30%; */
   padding: 2.6em 3.8em;
   cursor: pointer;
@@ -463,6 +469,7 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   overflow: hidden;
   /* border: 1px solid red; */
 
@@ -1314,7 +1321,32 @@ footer{
   /* #contenthead{
     font-size: 0.9rem;
   } */
-  .cardcontainer{
-    padding: 8px;
+  /* #flexdivintro, */
+  #backToDance,
+  #goToStory,
+  .backfrompass,
+  #backfromletter{
+    width:300px;
+    margin:5px auto;
+
   }
+  .card{
+    width:90vw;
+    padding:2px;
+  }
+  .cardcontainer1,
+  .cardcontainer3
+  {
+    width:90vw;
+    padding:2px;
+    margin:auto;
+  }
+  .cardcontainer{
+    padding: 2px;
+    width:90vw;
+  }
+  .headerstyle{
+    width:90vw;
+  }
+
 }
