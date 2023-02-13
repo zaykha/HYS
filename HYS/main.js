@@ -11,19 +11,23 @@ const renderer1 = new THREE.WebGLRenderer({
 })
 renderer1.setPixelRatio( window.devicePixelRatio);
 renderer1.setSize( window.innerWidth, window.innerHeight);
+// x: -0.4784776095349479, y: 1.8030176126297675, z: 2.709336202576902
+// x: -0.011503262016102512, y: 0.9300151056055409, z: -0.12258921690164955
 camera1.position.set(
-  -0.0320475539865685, 
-  3, 
-  4);
+  -0.4784776095349479, 
+  1.8030176126297675, 
+  2.709336202576902);
+//   camera1.rotateX(0.3);
 const pointLight1 = new THREE.PointLight(0xffffff);
 pointLight1.position.set(0,0.5,0.5)
 const ambientLight1 = new THREE.AmbientLight(0xffffff);
 ambientLight1.intensity = 1;
 const controls1 = new OrbitControls(camera1, renderer1.domElement);
 controls1.target.set( 
-  0.012487779108576954,
-  0.5451819395847102,
-  -0.2725182101592799
+  -0.011503262016102512,
+  0.9300151056055409,
+  -0.1225892169016495
+  // -0.2725182101592799
 );
 controls1.minAzimuthAngle = - Math.PI / 4;
 controls1.maxAzimuthAngle = Math.PI / 4;
@@ -198,7 +202,7 @@ loader.load(
           Model.position.set(0,0,4);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
-          Model.position.set(0,-0.5,8);
+          Model.position.set(0,-0.5,6.5);
         }else{
           Model.position.set(0,-0.5,16.5);
 
@@ -217,7 +221,7 @@ loader.load(
           Model.position.set(0,0,8);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
-          Model.position.set(0.3,-0.1,16);
+          Model.position.set(0.3,-0.1,14.9);
         }else{
           Model.position.set(0.3,-0.1,32);
 
@@ -263,7 +267,7 @@ loader.load(
           Model.position.set(0.5,0.1,12);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
-          Model.position.set(0.5,0.1,24);
+          Model.position.set(0.5,0.1,22.5);
         }else{
           Model.position.set(0.5,0.1,48);
 
@@ -304,10 +308,10 @@ loader.load(
         Model.rotateY(-90);
         if (window.innerHeight < 720) {
           // set model position for mobile
-          Model.position.set(1,0.3,16);
+          Model.position.set(0,0,16);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
-          Model.position.set(1,0.3,32);
+          Model.position.set(0,0,30.2);
         }else{
           Model.position.set(1,0.3,64);
         } 
@@ -315,7 +319,7 @@ loader.load(
         //   1,0.3,48
         // )
         Model.scale.set(0.1, 0.1, 0.1);
-        Model.rotateY(0.2);
+        Model.rotateY(0.5);
   }
 )
 loader.load(
@@ -325,10 +329,10 @@ loader.load(
         Model.rotateY(-90);
         if (window.innerHeight < 720) {
           // set model position for mobile
-          Model.position.set(1,0.3,80);
+          Model.position.set(0,0,12);
         } else if(window.innerHeight < 1200) {
           // set model position for desktop
-          Model.position.set(1,0.3,80);
+          Model.position.set(-0.2,0,37);
         }else{
           Model.position.set(1,0.3,80);
 
@@ -337,12 +341,22 @@ loader.load(
         //   1,0.3,80
         // )
         Model.scale.set(0.1, 0.1, 0.1);
-        Model.rotateY(0.2);
+        Model.rotateY(0.7);
   }
 )
 let light1 = new THREE.PointLight('white', 1, 50);
 const lightHelper = new THREE.PointLightHelper(light1);
-light1.position.set(1,2,98);
+if (window.innerHeight < 720) {
+  // set model position for mobile
+ light1.position.set(0,0,12);
+} else if(window.innerHeight < 1200) {
+  // set model position for desktop
+ light1.position.set(0.2, 0.7, 43.7);
+}else{
+  light1.position.set(1,2,98);
+
+} 
+
 
 var textureLoader = new THREE.CubeTextureLoader();
 textureLoader.setPath( 'textures/' );
@@ -377,7 +391,17 @@ loader.load(
     });
 
     Model1.rotateY(-80);
-    Model1.position.set(1, 0, 96);
+    if (window.innerHeight < 720) {
+      // set model position for mobile
+      Model1.position.set(0,0,12);
+    } else if(window.innerHeight < 1200) {
+      // set model position for desktop
+      Model1.position.set(0.2, 0, 43);
+    }else{
+      Model1.position.set(1, 0, 96);
+
+    } 
+    
     Model1.scale.set(1, 1, 1);
 
     
