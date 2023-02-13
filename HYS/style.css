@@ -270,14 +270,14 @@ a{
   padding: 0 10px;
 }
 #contenthead{
-  font-family: 'Dancing Script', cursive, sans-serif;
+  /* font-family: 'Dancing Script', cursive, sans-serif; */
   position:relative;
   top:3%;
   margin:auto;
   /* height: 200px; */
   background: white;
-  /* background: linear-gradient(to right, #FFFFFF 34%, #ff08ea 100%);
-  -webkit-background-clip: text;
+  background: linear-gradient(to right, #6100499f 34%, #ff08ea 100%);
+  /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
   display:flex;
   color: white;
@@ -289,7 +289,7 @@ a{
   z-index: 100;
   /* cursor: url('/HYS/cursorhys1.png'), auto; */
   user-select: none;
-  background-color: #671e4169;
+  /* background-color: #671e4169; */
 }
 #introEyes{
   position: relative;
