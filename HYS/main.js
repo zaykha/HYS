@@ -46,6 +46,7 @@ scene1.add(pointLight1,
 const RouteStoryline = document.getElementById('goToStory');
 const backToDance = document.getElementById('backToDance');
 
+
 const Valentine = document.getElementById('Valentine');
 const IntroEyes = document.getElementById('introEyes');
 backToDance.addEventListener('click',()=>{
@@ -163,6 +164,8 @@ loader.load(
         console.error( 'An error happened', error );
     },
 )
+
+
 let light2 = new THREE.PointLight('0xffffff', 3, 10);
 const lightHelper2 = new THREE.PointLightHelper(light2);
 // light2.position.set(-0.8,1.1,1.3);
@@ -171,11 +174,14 @@ loader.load(
   'YAMAKA.glb', (gltf)=>{
     const Model = gltf.scene;
         scene.add(Model);
-       
         Model.rotateY(-90);
-        Model.position.set(
-          0,-0.5,-0.5
-        )
+        if (window.innerHeight < 800) {
+          // set model position for mobile
+          Model.position.set(0,-0.5,-0.5);
+        } else {
+          // set model position for desktop
+          Model.position.set(0,-0.5,-0.5);
+        }        
         Model.scale.set(0.1, 0.1, 0.1);
   }
 )
@@ -184,6 +190,13 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
+        if (window.innerHeight < 800) {
+          // set model position for mobile
+          Model.position.set(0,-0.5,-0.5);
+        } else {
+          // set model position for desktop
+          Model.position.set(0,-0.5,-0.5);
+        } 
         Model.position.set(
           0,-0.2,8
         )
@@ -402,21 +415,6 @@ function moveCamera(){
     camera.position.x = t * -0.0001;
     camera.position.y = t * -0.0001;
   
-  
-  
-  
-      var Opadiv0 = document.getElementById('Opadiv0');
-      var position0 = Opadiv0.offsetTop - 750;
-      
-
-      function checker(position, domelement){
-        if (window.pageYOffset >= position) {
-          domelement.style.opacity='100%'; 
-        }
-      }
-      
-      // checker(position0, Opadiv0);
-
 
 }
 const Promptletter = document.getElementById('prompt');

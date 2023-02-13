@@ -275,10 +275,17 @@ a{
   top:3%;
   margin:auto;
   /* height: 200px; */
+<<<<<<< HEAD
   /* background: white; */
   background: linear-gradient(to right, #FFFFFF 34%, #ff08ea 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+=======
+  background: white;
+  background: linear-gradient(to right, #6100499f 34%, #ff08ea 100%);
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+>>>>>>> 19b2246f1e16326f02bc9a9c2e2442d8d60d7ff0
   display:flex;
   color: white;
   gap: 0px;
