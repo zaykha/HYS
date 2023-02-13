@@ -8,10 +8,16 @@
   <link href='https://fonts.googleapis.com/css2?family=Lobster&display=swap' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>💖🎁Trophy GF HYS🎁💖</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
   </head>
   <body>
     
@@ -70,7 +76,49 @@
         <div  id="goToStory">Go To Story</div>
      </div>
     <div class="vwdiv">
-      <h1 class="headerstyle">The Eyes That Capture My Heart</h1>
+      <h1 class="headerstyle">
+        <span class="word">T</span>
+        <span class="word">H</span>
+        <span class="word">E</span>
+        <span class="wordspace"></span>
+
+        <span class="word">E</span>
+        <span class="word">Y</span>
+        <span class="word">E</span>
+        <span class="word">S</span>
+        <span class="wordspace"></span>
+
+
+        <span class="word">T</span>
+        <span class="word">H</span>
+        <span class="word">A</span>
+        <span class="word">T</span>
+        <span class="wordspace"></span>
+
+
+        <span class="word">C</span>
+        <span class="word">A</span>
+        <span class="word">P</span>
+        <span class="word">T</span>
+        <span class="word">U</span>
+        <span class="word">R</span>
+        <span class="word">E</span>
+        <span class="wordspace"></span>
+
+
+        <span class="word">M</span>
+        <span class="word">Y</span>
+        <span class="wordspace"></span>
+
+
+        <span class="word">H</span>
+        <span class="word">E</span>
+        <span class="word">A</span>
+        <span class="word">R</span>
+        <span class="word">T</span>
+        <span class="word">💖</span>
+
+      </h1>
      <div class="cardcontainer">
       <div class="card">
        
@@ -171,7 +219,7 @@
     <div class="cardcontainer">
       <div class="card">
         <h1>10 Reasons Why She is Perfect For me</h1>
-        <ul>
+        <ul id="ullist">
           <li>We understand EachOther</li>
           <li>We've been through the same things that could help us build a strong relationship.</li>
           <li>She makes me happy and comfortable (without her doing anything)</li>
@@ -187,7 +235,7 @@
     </div>
   </div>
 
-    <div class="vwdiv">
+    <div class="vwdiv" id="animatedsvg">
     <div class="cardcontainer">
       <div class="cardsheismy">
 
@@ -215,23 +263,99 @@
   </div>
 
 
-    <div class="vwdiv">
-    <div class="cardcontainer">
-      
-      <div class="card">
-        <h1>Future Plans</h1>
-        <p>Hidden From Public</p>
+    <div class="vwdiv" >
+
+      <div id="letterMZK">
+        <div class="cardcontainer3">
+          <div class="card">
+            <h1>Letter To MZK</h1>
+            <textarea name="message" placeholder="Message here" id="message" cols="30" rows="10"></textarea>
+            
+          </div>
+          <div class="backfrompass" id="sendMZK">Send</div>
+        </div>
+      </div>
+
+
+      <div class="hiddenletter" id="lettertohys">
+        <div class="cardcontainer3" >
+          
+          <div class="card" >
+            <h1>Dear Trophy GirlFriend</h1>
+            <p>Thank you for loving me. I am a broken person but with you...</p>
+            <p>I am so much more motivated to work harder.</p>
+            <p>I love you more day by day.</p>
+            <p>I believe that we can do what we dream together</p>
+
+            <h2>My Dedications for you 2023</h2>
+            <p>Start a new life at a better place and call you within 6 months.</p>
+            <p>Teach you everything that i know that you wanna learn</p>
+            <p>Make you healthy</p>
+            <p>Make you Happy EveryDay</p>
+            <p>Help you solve and give advice to all your problems</p>
+
+            <p>With Biggest Love In the whole Universe,</p>
+            <p>MZK</p>  
+          </div>
+        </div>
+
+      <div class="backfrompass" id="backfromlettertohys">back</div>
+      <div class="backfrompass" id="lettertoMZK">Write a letter to MZK</div>
+
+
+      </div>
+
+<div id="prompt">
+      <!-- <div class="hiddenletter"> -->
+        <div class="cardcontainer3" >
+        <div class="card" >
+          <h1>Password</h1>
+          <Input type="password" id="inputpass" placeholder="password"></Input>
+          
+
+        </div>
+      </div>
+      <div class="backfrompass" id="submitpass">submit</div>
+      <div class="backfrompass" id="backfrompass">back</div>
+
+      <!-- </div> -->
+    </div>
+
+
+    <div class="cardcontainer" id="loveletter">
+      <div class="card" >
+        <h1>My Letter To HYS</h1>
+        <p>Click to Open</p>
       </div>
     </div>
   </div>
 
+  
     <!-- <div class="cardcontainer"></div> -->
-    
+    <footer>
+      <div class="horidiv">
+        Credits
+      </div>
+      <div class="horidiv">
+        Dedications
+      </div>
+      <div class="rightsdiv">
+        All rights reserved &#169;mzk
+      </div>
+      
+    </footer>
     </main>
+    
     <div class="progress-bar-container">
       <label for="progress-bar">Building...</label>
       <progress id="progress-bar" value="0" max="100"></progress>
     </div>
     <script type="module" src="/main.js"></script>
+    <script type="text/javascript">
+      (function(){
+         emailjs.init("hanLzw9pqdz5PNq5a");
+      })();
+   </script>
+  
   </body>
 </html>

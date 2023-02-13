@@ -62,7 +62,8 @@ RouteStoryline.addEventListener('click',()=>{
     IntroEyes.style.opacity='100%';
     Valentine.style.display='none';
   },1000)
- 
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
   // Valentine.style.display='none';
 })
 
@@ -162,9 +163,9 @@ loader.load(
         console.error( 'An error happened', error );
     },
 )
-let light2 = new THREE.PointLight('0xffffff', 3, 50);
+let light2 = new THREE.PointLight('0xffffff', 3, 10);
 const lightHelper2 = new THREE.PointLightHelper(light2);
-light2.position.set(-0.8,1.1,1.3);
+// light2.position.set(-0.8,1.1,1.3);
 // scene.add(light2);
 loader.load(
   'YAMAKA.glb', (gltf)=>{
@@ -202,6 +203,21 @@ loader.load(
         Model.rotateY(0.4);
   }
 )
+
+light2.position.set(-1,0.8,34);
+// scene.add(light2)
+loader.load(
+  'dinning.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        // Model.rotateY(-90);
+        Model.position.set(
+          -1,0.1,34
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.4);
+  }
+)
 loader.load(
   'balcony.glb', (gltf)=>{
     const Model = gltf.scene;
@@ -212,6 +228,18 @@ loader.load(
         )
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.1);
+  }
+)
+loader.load(
+  'hyspic.glb', (gltf)=>{
+    const Model = gltf.scene;
+        scene.add(Model);
+        Model.rotateY(-90);
+        Model.position.set(
+          2,0.3,52
+        )
+        Model.scale.set(0.1, 0.1, 0.1);
+        Model.rotateY(0.2);
   }
 )
 loader.load(
@@ -391,10 +419,60 @@ function moveCamera(){
 
 
 }
+const Promptletter = document.getElementById('prompt');
+const InputPass = document.getElementById('inputpass');
+const SubmitPass = document.getElementById('submitpass');
+const LetterToHys = document.getElementById('lettertohys');
+
+const BackfromPass = document.getElementById('backfrompass');
+const BackfromLetterToHYS = document.getElementById('backfromlettertohys');
+const LetterToMZK = document.getElementById('lettertoMZK');
+const LetterMZK = document.getElementById('letterMZK');
+const SendMZK = document.getElementById('sendMZK');
 
 
+document.getElementById('loveletter').addEventListener('click',()=>{
+  Promptletter.style.opacity='1';
+
+  setTimeout(() => {
+    Promptletter.style.display='flex';
+  }, 500);
+  
+});
+BackfromPass.addEventListener('click',()=>{
+  Promptletter.style.opacity='0';
+
+  setTimeout(() => {
+    Promptletter.style.display='none';
+  }, 500);
+})
 
 
+SubmitPass.addEventListener('click',()=>{
+  console.log(InputPass.value)
+  if(InputPass.value == 'u!$$o&w%6wwo%5'){
+    Promptletter.style.opacity='0';
+    LetterToHys.style.opacity='1';
+
+
+    setTimeout(() => {
+      Promptletter.style.display='none';
+    LetterToHys.style.display='flex';
+    }, 600);
+    
+
+  }else{
+    alert('OOPs! This Letter is only for HYS.')
+  }
+})
+BackfromLetterToHYS.addEventListener('click',()=>{
+  LetterToHys.style.opacity='0';
+
+  setTimeout(() => {
+    LetterToHys.style.display='none';
+    
+  }, 600);
+})
 
 document.body.onscroll = moveCamera
 
@@ -408,7 +486,37 @@ document.body.onscroll = moveCamera
       renderer.setSize( window.innerWidth, window.innerHeight );
   
   }
+  function SendMail(){
+    var params ={
+      message: document.getElementById('message').value
+    }
+    emailjs.send("service_mbbh87o","template_4q2i559", params).then(
+      function (res){
+        alert('Successfully sent to MZK' + res.status);
+      }
+    )
+  }
+  LetterToMZK.addEventListener('click',()=>{
+    LetterMZK.style.opacity='1';
+
+    setTimeout(() => {
+      LetterMZK.style.display='flex';
+    }, 500);
+  })
   
+  
+
+SendMZK.addEventListener('click', ()=>{
+  SendMail();
+  LetterMZK.style.opacity='0';
+  LetterToHys.style.opacity='0';
+  setTimeout(() => {
+    LetterMZK.style.display='none';
+    LetterToHys.style.display='none';
+  }, 600);
+
+})
+
 function animate() {
   requestAnimationFrame( animate );
 
