@@ -175,13 +175,16 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 800) {
+        if (window.innerHeight < 720) {
           // set model position for mobile
           Model.position.set(0,-0.5,-0.5);
-        } else {
+        } else if(window.innerHeight < 1440) {
           // set model position for desktop
           Model.position.set(0,-0.5,-0.5);
-        }        
+        }else{
+          Model.position.set(0,-0.5,-0.5);
+
+        }  
         Model.scale.set(0.1, 0.1, 0.1);
   }
 )
@@ -190,16 +193,16 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 800) {
+        if (window.innerHeight < 720) {
           // set model position for mobile
-          Model.position.set(0,-0.5,-0.5);
-        } else {
+          Model.position.set(0,0,4);
+        } else if(window.innerHeight < 1440) {
           // set model position for desktop
-          Model.position.set(0,-0.5,-0.5);
-        } 
-        Model.position.set(
-          0,-0.2,8
-        )
+          Model.position.set(0,-0.5,8);
+        }else{
+          Model.position.set(0,-0.5,16.5);
+
+        }  
         Model.scale.set(0.1, 0.1, 0.1);
         Model.rotateY(0.6);
   }
@@ -209,6 +212,16 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
+        if (window.innerHeight < 720) {
+          // set model position for mobile
+          Model.position.set(0,0,8);
+        } else if(window.innerHeight < 1440) {
+          // set model position for desktop
+          Model.position.set(0.3,-0.1,16);
+        }else{
+          Model.position.set(0.3,-0.1,32);
+
+        } 
         Model.position.set(
           0.3,0.1,16
         )
@@ -400,6 +413,17 @@ function moveCamera(){
   hys.rotation.x += 0.05;
   hys.rotation.y += 0.075;
   hys.rotation.z += 0.05;
+
+  if(window.innerWidth <768){
+    if(t>-2){
+      cover.style.opacity='100%';
+      cover.style.display='block';
+ 
+    }else if(t<-2){
+      cover.style.opacity='0';
+      cover.style.display='none';
+    }
+  }else{
     if(t>-100){
       cover.style.opacity='100%';
       cover.style.display='block';
@@ -408,6 +432,8 @@ function moveCamera(){
       cover.style.opacity='0';
       cover.style.display='none';
     }
+  }
+    
 
 
     camera.position.set(0,0,0);
