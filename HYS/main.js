@@ -93,7 +93,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
 renderer.setPixelRatio( window.devicePixelRatio);
-renderer.setSize( '100vw', window.innerHeight);
+renderer.setSize( window.innerWidth, window.innerHeight);
 
 let mixer;
 let mixer1;

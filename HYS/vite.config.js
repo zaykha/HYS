@@ -1,9 +1,9 @@
 import { defineConfig, splitVendorChunkPlugin } from "vite";
 
 export default defineConfig ({
-    base:'/MoeZayKha/',
+    base:'/',
     build:{
-        chunkSizeWarningLimit: 1600,
+        chunkSizeWarningLimit: 8000,
         plugins: [splitVendorChunkPlugin()]
     }
 })
