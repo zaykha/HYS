@@ -10,7 +10,7 @@ const renderer1 = new THREE.WebGLRenderer({
   canvas: document.querySelector('#hysintro'),
 })
 renderer1.setPixelRatio( window.devicePixelRatio);
-renderer1.setSize( window.innerWidth, window.innerHeight);
+renderer1.setSize( window.innerWidth,window.innerHeight);
 // x: -0.4784776095349479, y: 1.8030176126297675, z: 2.709336202576902
 // x: -0.011503262016102512, y: 0.9300151056055409, z: -0.12258921690164955
 camera1.position.set(
@@ -92,6 +92,8 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
+renderer.setPixelRatio( window.devicePixelRatio);
+renderer.setSize( '100vw', window.innerHeight);
 
 let mixer;
 let mixer1;
@@ -179,16 +181,21 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+
+
+
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(0,-0.5,-0.5);
-        } else if(window.innerHeight < 1200) {
+        } else if(800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0,-0.5,-0.5);
         }else{
           Model.position.set(0,-0.5,-0.5);
 
         }  
+        
+        
         Model.scale.set(0.1, 0.1, 0.1);
   }
 )
@@ -197,10 +204,10 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(0,-0.5,7);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0,-0.5,6.5);
         }else{
@@ -216,10 +223,10 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(0,0,15.7);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0.3,-0.1,14.9);
         }else{
@@ -241,10 +248,10 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         // Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(-1,0.1,24.5);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(-1,0.1,24);
         }else{
@@ -262,10 +269,10 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(0.5,0.1,23.5);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(0.5,0.1,22.5);
         }else{
@@ -284,10 +291,10 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(2,0.3,25);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(2,0.3,33);
         }else{
@@ -306,12 +313,12 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(0,0,32);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
-          Model.position.set(0,0,30.2);
+          Model.position.set(0,0,24);
         }else{
           Model.position.set(1,0.3,64);
         } 
@@ -327,10 +334,10 @@ loader.load(
     const Model = gltf.scene;
         scene.add(Model);
         Model.rotateY(-90);
-        if (window.innerHeight < 920) {
+        if (window.innerHeight < 800) {
           // set model position for mobile
           Model.position.set(0.3,0,41);
-        } else if(window.innerHeight < 1200) {
+        } else if( 800>window.innerHeight && window.innerHeight < 1200) {
           // set model position for desktop
           Model.position.set(-0.2,0,37);
         }else{
@@ -346,10 +353,10 @@ loader.load(
 )
 let light1 = new THREE.PointLight('white', 1, 50);
 const lightHelper = new THREE.PointLightHelper(light1);
-if (window.innerHeight < 920) {
+if (window.innerHeight < 800) {
   // set model position for mobile
  light1.position.set(0,0,44.7);
-} else if(window.innerHeight < 1200) {
+} else if( 800>window.innerHeight && window.innerHeight < 1200) {
   // set model position for desktop
  light1.position.set(0.2, 0.7, 43.7);
 }else{
@@ -391,10 +398,10 @@ loader.load(
     });
 
     Model1.rotateY(-80);
-    if (window.innerHeight < 920) {
+    if (window.innerHeight < 800) {
       // set model position for mobile
       Model1.position.set(0,0,44);
-    } else if(window.innerHeight < 1200) {
+    } else if( 800>window.innerHeight && window.innerHeight < 1200) {
       // set model position for desktop
       Model1.position.set(0.2, 0, 43);
     }else{
@@ -421,8 +428,7 @@ loader.load(
     });
   }
 );
-renderer.setPixelRatio( window.devicePixelRatio);
-renderer.setSize( window.innerWidth, window.innerHeight);
+
 // camera.position.setZ(30);
 
 const geometry = new THREE.TorusGeometry( 10, 3, 16, 100);
